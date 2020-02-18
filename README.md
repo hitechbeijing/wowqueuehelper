@@ -4,15 +4,25 @@
 <p>功能</p>
 1、设置时间自动排队
 2、掉线重新启动游戏（掉线15分钟内免排队）
-![alt](https://github.com/hitechbeijing/wowqueuehelper/raw/master/cmd.png)
-<p>依赖说明</p>
+![screenshot](https://github.com/hitechbeijing/wowqueuehelper/raw/master/cmd.png?raw=true)
+## 依赖环境
 python 3.6+
-使用pip3 install -r requirements.py安装依赖库
-<p><b>强烈建议配置阿里巴巴开源镜像库：<b></p>
+## 安装依赖：
+
 ```shell
-pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+
+pip3 install -r requirements.py
+
 ```
-<p>使用说明</p>
+
+<p><b>强烈建议配置阿里巴巴开源镜像库：<b></p>
+  
+```shell
+  
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+
+```
+## 使用方法：<br/>
 配置config.py
 使用python3 main.py --queue启动自动排队
 使用python3 main.py --reconnect自动重连
