@@ -4,7 +4,9 @@
 <p>功能</p>
 1、设置时间自动排队
 2、掉线重新启动游戏（掉线15分钟内免排队）
+
 ![screenshot](https://github.com/hitechbeijing/wowqueuehelper/raw/master/cmd.png?raw=true)
+
 ## 依赖环境
 python 3.6+
 ## 安装依赖：
