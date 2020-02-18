@@ -9,9 +9,9 @@
 python 3.6+
 使用pip3 install -r requirements.py安装依赖库
 <p><b>强烈建议配置阿里巴巴开源镜像库：<b></p>
-、、、shell
+```shell
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
-、、、
+```
 <p>使用说明</p>
 配置config.py
 使用python3 main.py --queue启动自动排队
