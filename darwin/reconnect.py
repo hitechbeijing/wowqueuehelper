@@ -7,7 +7,7 @@ class wow_reconnect(config):
         pyautogui.PAUSE = 0.5
         rootPath = sys.path[0]
         os.chdir(rootPath)
-    def check_state(self):
+    def check_state(self,login=False):
         while True:
             try:
                 with open(self.log_path.replace('\\',''), 'r') as f:
@@ -18,11 +18,16 @@ class wow_reconnect(config):
                    pattern = re.compile('Destroy|Destroyed')
                    m = pattern.search(str(last_line))
                    print(last_line)
-                   if m is not None:
-                      self.killAll()
-                      self.restartGame()
-                      break
-                      exit()
+                   if m is not None and login==False:
+                       self.killAll()
+                       self.restartGame()
+                       break
+                       exit()
+                   elif m is not None and login==True:
+                       self.killAll()
+                       self.autoLogin()
+                       break
+                       exit()
                    else:
                       print("尚未掉线")
                 else:
@@ -44,3 +49,25 @@ class wow_reconnect(config):
         x,y=pyautogui.center(coords)
         pyautogui.leftClick(x/2,y/2)
         print("游戏重启完成")
+    def autoLogin(self):
+        if self.account and self.password:
+            os.system("open "+self.wow_path)
+            time.sleep(10)
+            coords_account = pyautogui.locateOnScreen(self.account_img,confidence=0.9)
+            account_input_x, account_input_y = pyautogui.center(coords_account)
+            pyautogui.leftClick(account_input_x/2,account_input_y/2)
+            pyautogui.write(self.account, interval=0.25)
+            time.sleep(2)
+            coords_password = pyautogui.locateOnScreen(self.password_img,confidence=0.9)
+            password_input_x, password_input_y = pyautogui.center(coords_password)
+            pyautogui.leftClick(int(password_input_x/2),int(password_input_y/2))
+            pyautogui.write(self.password, interval=0.25)
+            time.sleep(2)
+            coords_login = pyautogui.locateOnScreen(self.login_img,confidence=0.9)
+            login_x, login_y = pyautogui.center(coords_login)
+            pyautogui.leftClick(login_x/2,login_y/2)
+            print("游戏重启完成")
+            return True
+        else:
+            print("游戏账号信息未填写")
+            return False

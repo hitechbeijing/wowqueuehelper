@@ -1,6 +1,6 @@
 import time,subprocess,datetime,json,os,sys
 from config import config
-from pykeyboard import PyKeyboard
+# from pykeyboard import PyKeyboard
 import pyautogui
 class wow_queue(config):
     # def __init__(self,parent=None):
