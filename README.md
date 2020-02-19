@@ -28,4 +28,7 @@ pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 配置config.py<br/>
 使用python3 main.py --queue启动自动排队<br/>
 使用python3 main.py --reconnect自动重连<br/>
+使用python3 main.py -R -A自动重连并且自动完成输入账号密码<br/>
+<b>提示：为了提高图形识别准确率（可能受屏幕分辨率影响），最好自己截图替换account.jpg，password.jpg，login.jpg，button.jpg这四张图片</b><br/>
+<b>后期考虑更换为文字识别的方式</b>
 
